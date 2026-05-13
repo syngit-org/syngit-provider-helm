@@ -111,7 +111,7 @@ func ExtractValues(secret *corev1.Secret) (*HelmValues, error) {
 		return nil, fmt.Errorf("failed to marshal values to YAML: %w", err)
 	}
 
-	rawValuesWithHeader := fmt.Sprintf("# %s%s/%s\n%s", ResourceFinderCommentPrefix, release.Namespace, release.Name, string(rawValues))
+	rawValuesWithHeader := fmt.Sprintf("# %s%s/%s\n%s", ResourceFinderCommentPrefix, release.Namespace, secret.Name, string(rawValues))
 
 	return &HelmValues{
 		Namespace:        release.Namespace,

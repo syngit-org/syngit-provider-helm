@@ -206,7 +206,7 @@ func TestExtractValues(t *testing.T) {
 		if result.RawValues == "" {
 			t.Error("RawValues should not be empty")
 		}
-		wantHeader := "# " + ResourceFinderCommentPrefix + "production/myapp\n"
+		wantHeader := "# " + ResourceFinderCommentPrefix + "production/sh.helm.release.v1.myapp.v1\n"
 		if !strings.HasPrefix(result.RawValues, wantHeader) {
 			t.Errorf("RawValues should start with %q, got %q", wantHeader, result.RawValues)
 		}
