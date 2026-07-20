@@ -12,6 +12,7 @@ func TestReleaseNameFromSecretName(t *testing.T) {
 		// Not a Helm secret name: returned unchanged.
 		{"my-app-config", "my-app-config"},
 		{"", ""},
+		{"sh.helm.release.v1.my-appv3", "sh.helm.release.v1.my-appv3"},
 	}
 	for _, c := range cases {
 		if got := GetReleaseNameFromSecretName(c.in); got != c.want {
