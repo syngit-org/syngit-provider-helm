@@ -38,3 +38,13 @@ func decodeRelease(data []byte) (*release.Release, error) {
 
 	return &rel, nil
 }
+
+// Extracts the Helm release name embedded in a Helm
+// storage secret name. It returns the input unchanged
+// when it does not match the expected format.
+func GetReleaseNameFromSecretName(secretName string) string {
+	if m := helmSecretNameRegex.FindStringSubmatch(secretName); m != nil {
+		return m[1]
+	}
+	return secretName
+}
