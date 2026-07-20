@@ -7,3 +7,5 @@ type HelmValues struct {
 	RawValues        string
 	StructuredValues map[string]interface{}
 }
+
+const HelmValuesAnnotation = "helm.syngit.io/helm-values"
