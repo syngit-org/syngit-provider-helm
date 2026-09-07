@@ -4,8 +4,8 @@ go 1.25.5
 
 require (
 	helm.sh/helm/v4 v4.1.4
-	k8s.io/api v0.35.2
-	k8s.io/apimachinery v0.35.2
+	k8s.io/api v0.37.0
+	k8s.io/apimachinery v0.37.0
 	sigs.k8s.io/yaml v1.6.0
 )
 
